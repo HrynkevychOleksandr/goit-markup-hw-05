@@ -51,7 +51,18 @@
 			<section class="hero">
 				<div class="container">
 					<h1 class="hero-title">Effective Solutions for Your Business</h1>
-					<button type="button" class="hero-button">Order Service</button>
+					<button data-modal-open type="button" class="hero-button">Order Service</button>
+					<div class="backdrop is-hidden" data-modal>
+						<div class="modal">
+							<!-- <div class="modal-card"> </div> -->
+							<button data-modal-close type="button" class="button-close">
+								<svg class="modal-card-icon" width="8" height="8">
+									<use href="./images/icons.svg#icon-close"></use>
+								</svg>
+							</button>
+							<!-- <a data-modal-close href="" class="modal-card-link"> </a> -->
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- ************************** section one ************************** -->
@@ -367,5 +378,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src="./js/modal.js"></script>
 	</body>
 </html>

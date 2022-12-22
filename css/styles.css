@@ -72,6 +72,9 @@ a {
 	margin-right: auto;
 }
 /* header */
+/* .header-main {
+	position: relative;
+} */
 .header-main > .container,
 .header-portf > .container {
 	display: flex;
@@ -104,8 +107,6 @@ a {
 .site-nav,
 .cont-nav {
 	display: flex;
-	padding-top: 24px;
-    padding-bottom: 24px;
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -119,6 +120,7 @@ a {
 }
 .site-nav .link {
 	position: relative;
+	display: block;
 	padding-top: 24px;
 	padding-bottom: 24px;
 	color: var(--text-color-navyblue);
@@ -171,7 +173,7 @@ a {
 .header-portf {
 	box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-/* hero */
+/* ---------------------- hero ---------------------- */
 .hero {
 	max-width: 1440px;
 	height: 600px;
@@ -213,6 +215,52 @@ a {
    background-color: #404BBF;
    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+/* ------------------ hero-modal ------------------ */
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(46, 47, 66, 0.4);
+	/* transform: scale(0.3); */
+	transition: transform 250ms var(--cubic-bezier);
+}
+.backdrop.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+	min-width: 408px;
+	min-height: 516px;
+	background-color: var();
+	background: #FCFCFC;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+
+}
+.button-close {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background-color: var(--text-color-cornflower);
+		border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-card-icon {
+
+}
+
 /* -------------------section one------------------- */
 .section-one {
 	padding-top: 120px;
@@ -395,7 +443,7 @@ a {
 	padding-top: 96px;
 	padding-bottom: 120px;
 }
-/* Блок фільтрів */
+/* ----------------- Блок фільтрів ----------------- */
 .filter-ul {
     display: flex;
 	justify-content: center;
@@ -428,7 +476,7 @@ a {
 	color: var(--primery-white-color);
 	background-color: var(--text-color-iris);
 }
-/* Блок портфоліо */
+/* ----------------- Блок портфоліо ----------------- */
 .portfolio-ul {
 	padding: 0;
 	list-style: none;
@@ -462,7 +510,38 @@ a {
 .card-content > .card-text {
 	margin-top: 8px;
 }
-/* footer */
+.card-thumd {
+	position: relative;
+	overflow: hidden;
+}
+.overlay-card {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--text-color-iris);
+	/* background-blend-mode: soft-light;
+	mix-blend-mode: normal; */
+	transform: translateY(100%);
+	transition: transform 250ms var(--cubic-bezier);
+}
+.portfolio-li:hover .overlay-card {
+	transform: translateY(0);
+}
+.overlay-card-h3 {
+	position: absolute;
+	top: 40px;
+	left: 32px;
+	width: 296px;
+	height: 96px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--text-color-cloud);
+}
+/* --------------------- footer --------------------- */
 .footer {
 	padding-top: 100px;
 	padding-bottom: 100px;
